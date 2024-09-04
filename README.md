@@ -36,6 +36,41 @@ $ cargo run --release
 ```bash
 $ cargo run --release -- --help
 ```
+## Docker
+
+You can build and run the lite-rpc service using Docker. This allows for easy deployment and management of the service.
+
+```bash
+docker build -t lite-rpc .
+```
+
+Building the Docker Image
+Navigate to the project directory and build the Docker image:
+
+Running the Docker Container
+To run the Docker container in detached mode with a restart policy:
+
+```bash
+docker run --restart unless-stopped -d lite-rpc
+```
+
+### Using Docker Compose
+
+1. Start the services:
+    ```sh
+    docker-compose up --build -d
+    ```
+
+2. See realtime logs:
+    ```sh
+    docker-compose logs -f
+    ```
+
+3. Properly close the services:
+    ```sh
+    docker-compose down
+    ```
+
 
 ## Test and Bench
 

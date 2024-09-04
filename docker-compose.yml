@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  lite-rpc:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8890:8890"
+      - "8891:8891"
+      - "9091:9091"
+    env_file:
+      - .env
+    restart: unless-stopped
